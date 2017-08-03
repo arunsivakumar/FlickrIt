@@ -11,17 +11,17 @@ import Foundation
 
 class Photo{
     
-    var dateTaken: Date
     var id: String
     var url: URL
     var title: String
+    var dateTaken: Date
+
     
-    
-    init(id: String, url: URL, title: String, dateTaken: Data){
+    init(id: String, url: URL, title: String, dateTaken: Date){
         
         self.id = id
         self.url = url
-        self. title = title
+        self.title = title
         self.dateTaken = dateTaken
     }
     
