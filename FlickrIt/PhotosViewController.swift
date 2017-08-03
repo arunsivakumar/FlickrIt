@@ -10,6 +10,8 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -25,3 +27,11 @@ class PhotosViewController: UIViewController {
 
 }
 
+extension PhotosViewController:UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        
+    }
+}
