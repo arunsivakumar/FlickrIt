@@ -1,27 +1,3 @@
-st login: Wed Aug  2 20:06:20 on console
-lakshmi ~
-$ cd /Users/Lakshmi/Developer/IOS/Z/Swamper 
-lakshmi (notes *) Swamper
-$ vi podfile
-lakshmi (notes *) Swamper
-$ vi gitignore
-lakshmi (notes *) Swamper
-$ vi .gitignore
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #####
 # OS X temporary files that should never be committed
 .DS_Store
@@ -45,5 +21,82 @@ profile
 ####
 # Xcode build files
 DerivedData/
-".gitignore" 102L, 1434C
+build/
+Builds/
 
+#####
+# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+####
+# Xcode 4
+xcuserdata
+!xcschemes
+# Xcode 4
+*.moved-aside
+
+####
+# XCode 4 workspaces - more detailed
+!xcshareddata
+!default.xcworkspace
+*.xcworkspacedata
+
+
+####
+# Xcode 5
+*.xccheckout
+*.xcuserstate
+
+####
+# Xcode 7
+*.xcscmblueprint
+
+####
+# AppCode
+.idea/
+
+####
+# Other Xcode files
+profile
+*.hmap
+*.ipa
+
+####
+# CocoaPods
+Pods/
+!Podfile
+!Podfile.lock
+
+####
+# Carthage
+Carthage/Build.rbenv-vars
+!Cartfile
+!Cartfile.private
+!Cartfile.resolved
+
+####
+# Fastlane
+# Temporary profiling data
+/fastlane/report.xml
+# Deliver temporary error output
+/fastlane/Error*.png
+# Deliver temporary preview output
+/fastlane/Preview.html
+# Snapshot generated screenshots
+/fastlane/screenshots/*/*-portrait.png
+/fastlane/screenshots/*/*-landscape.png
+/fastlane/screenshots/screenshots.html
+# Frameit generated screenshots
+/fastlane/screenshots/*/*-portrait_framed.png
+/fastlane/screenshots/*/*-landscape_framed.png
+
+####
+# rbenv
+.rbenv-vars
