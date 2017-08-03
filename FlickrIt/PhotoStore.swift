@@ -9,11 +9,22 @@
 import Foundation
 import UIKit
 
-enum PhotosResult{
+
+typealias PhotoCompletion = (PhotoResult) -> Void
+
+enum PhotoResult{
     case success([Photo])
     case failure(Error)
 }
 class PhotoStore{
     
+    
+    func fetchInterestingPhotos(completion: PhotoCompletion){
+        
+    }
+    
+    func searchPhotos(completion: PhotoCompletion){
+        
+    }
     
 }
