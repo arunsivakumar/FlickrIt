@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 typealias PhotoCompletion = (PhotoResult) -> Void
 
