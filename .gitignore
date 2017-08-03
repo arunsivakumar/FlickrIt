@@ -1,0 +1,49 @@
+st login: Wed Aug  2 20:06:20 on console
+lakshmi ~
+$ cd /Users/Lakshmi/Developer/IOS/Z/Swamper 
+lakshmi (notes *) Swamper
+$ vi podfile
+lakshmi (notes *) Swamper
+$ vi gitignore
+lakshmi (notes *) Swamper
+$ vi .gitignore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####
+# OS X temporary files that should never be committed
+.DS_Store
+*.swp
+*.lock
+profile
+
+#####
+# DotEnv files
+.env
+
+####
+# Xcode temporary files that should never be committed
+*~.nib
+
+####
+# Objective-C/Swift specific
+*.hmap
+*.ipa
+
+####
+# Xcode build files
+DerivedData/
+".gitignore" 102L, 1434C
+
