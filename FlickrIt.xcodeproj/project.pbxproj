@@ -15,6 +15,7 @@
 		405D35D71F33CEC800DC72CF /* FlickrItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35D61F33CEC800DC72CF /* FlickrItTests.swift */; };
 		405D35E21F33CEC800DC72CF /* FlickrItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35E11F33CEC800DC72CF /* FlickrItUITests.swift */; };
 		405D35F01F33D14B00DC72CF /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35EF1F33D14B00DC72CF /* PhotoStore.swift */; };
+		405D35F21F33D1D300DC72CF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35F11F33D1D300DC72CF /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		405D35E11F33CEC800DC72CF /* FlickrItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrItUITests.swift; sourceTree = "<group>"; };
 		405D35E31F33CEC800DC72CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		405D35EF1F33D14B00DC72CF /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
+		405D35F11F33D1D300DC72CF /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				405D35CA1F33CEC800DC72CF /* LaunchScreen.storyboard */,
 				405D35CD1F33CEC800DC72CF /* Info.plist */,
 				405D35EF1F33D14B00DC72CF /* PhotoStore.swift */,
+				405D35F11F33D1D300DC72CF /* Photo.swift */,
 			);
 			path = FlickrIt;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405D35F21F33D1D300DC72CF /* Photo.swift in Sources */,
 				405D35C41F33CEC800DC72CF /* PhotosViewController.swift in Sources */,
 				405D35F01F33D14B00DC72CF /* PhotoStore.swift in Sources */,
 				405D35C21F33CEC800DC72CF /* AppDelegate.swift in Sources */,
