@@ -109,7 +109,7 @@ struct FlickrAPI{
             let id = json["id"].string,
             let title = json["title"].string,
             let dateString = json["datetaken"].string,
-            let photoURLString = json["url_h"].string,
+            let urlString = json["url_h"].string,
             let url = URL(string:photoURLString),
             let dateTaken = dateFormatter.date(from: dateString) else{
                 
