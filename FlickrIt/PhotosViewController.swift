@@ -41,6 +41,13 @@ class PhotosViewController: UIViewController {
 
 extension PhotosViewController:UICollectionViewDelegate{
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let cells = 3
+        let width = (self.view.frame.width / CGFloat(cells))
+        let height = width
+        return CGSize(width: width, height: height)
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
