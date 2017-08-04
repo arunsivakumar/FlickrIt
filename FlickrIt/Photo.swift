@@ -17,7 +17,7 @@ class Photo{
     var dateTaken: Date
 
     
-    init(id: String, url: URL, title: String, dateTaken: Date){
+    init(id: String, title: String, url: URL, dateTaken: Date){
         
         self.id = id
         self.url = url
