@@ -8,6 +8,8 @@ target 'FlickrIt' do
   # Pods for FlickrIt
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
+  pod 'Bond'
+  pod 'Kingfisher', '~> 3.0'
 
   target 'FlickrItTests' do
     inherit! :search_paths
