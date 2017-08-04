@@ -15,9 +15,7 @@ class PhotoDetailViewController:UIViewController{
     var photo:Photo!
     
      override func viewDidLoad() {
-        
         loadData()
-        
      }
     
     func loadData(){
