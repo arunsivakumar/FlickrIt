@@ -37,7 +37,21 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSQ-sF-hES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="146" height="154"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="GSQ-sF-hES" secondAttribute="bottom" id="Gt7-Co-3KK"/>
+                                            <constraint firstItem="GSQ-sF-hES" firstAttribute="top" secondItem="HRL-p2-6Dw" secondAttribute="top" id="IAT-Zo-LvF"/>
+                                            <constraint firstItem="GSQ-sF-hES" firstAttribute="leading" secondItem="HRL-p2-6Dw" secondAttribute="leading" id="ZqM-vX-EQd"/>
+                                            <constraint firstAttribute="trailing" secondItem="GSQ-sF-hES" secondAttribute="trailing" id="bo5-Yd-tqO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="GSQ-sF-hES" id="b02-tm-fFz"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

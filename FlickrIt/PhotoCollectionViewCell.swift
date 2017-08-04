@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell{
     
+    @IBOutlet weak var photoImageView: UIImageView!
     var photo:Photo?{
         didSet{
             if let photo = photo{
-                
+       
+                photoImageView.kf.setImage(with: photo.url)
                 
             }
         }
