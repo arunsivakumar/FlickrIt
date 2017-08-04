@@ -38,7 +38,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="146" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSQ-sF-hES">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GSQ-sF-hES">
                                                     <rect key="frame" x="0.0" y="0.0" width="146" height="154"/>
                                                 </imageView>
                                             </subviews>
@@ -51,6 +51,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="photoImageView" destination="GSQ-sF-hES" id="b02-tm-fFz"/>
+                                            <segue destination="cHR-Sn-VPu" kind="show" identifier="showPhoto" id="w6v-WM-3hC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -72,6 +73,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="38.23088455772114"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="7Ij-wZ-4HN">
+            <objects>
+                <viewController id="cHR-Sn-VPu" customClass="PhotoDetailViewController" customModule="FlickrIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sMR-uD-Lqf"/>
+                        <viewControllerLayoutGuide type="bottom" id="KhL-YZ-R3K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XTq-0Z-q8R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BUx-Rw-drP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BUx-Rw-drP" firstAttribute="bottom" secondItem="KhL-YZ-R3K" secondAttribute="top" id="DMb-53-njr"/>
+                            <constraint firstItem="BUx-Rw-drP" firstAttribute="leading" secondItem="XTq-0Z-q8R" secondAttribute="leading" id="LL3-LO-Ef3"/>
+                            <constraint firstItem="BUx-Rw-drP" firstAttribute="top" secondItem="sMR-uD-Lqf" secondAttribute="bottom" id="T6s-rY-oFu"/>
+                            <constraint firstAttribute="trailing" secondItem="BUx-Rw-drP" secondAttribute="trailing" id="app-ZJ-xy4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="BUx-Rw-drP" id="A3F-s9-XWV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZr-pO-qz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629.5999999999999" y="49.925037481259373"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5sa-CU-8CL">
