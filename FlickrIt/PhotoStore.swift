@@ -98,8 +98,9 @@ class PhotoStore{
      - Returns: ImageCompletion
      */
     
+     //FIXME:- the completion block doesnt get dispatched on the main thread
+    
     func fetchImage(for photo:Photo,completion: @escaping ImageCompletion){
-        
         
         // fetch from cache
         if let image = imageCache.object(forKey: photo.url.absoluteString as NSString){

@@ -123,9 +123,6 @@ struct FlickrAPI{
     }
     
     
-
-
-    
     /**
      Method to convert json to photos
      
