@@ -12,28 +12,63 @@ import UIKit
 typealias PhotoCompletion = (PhotoResult) -> Void
 typealias ImageCompletion = (ImageResult) -> Void
 
+
+
+/**
+ 
+ Photos result from API
+ 
+ - success: Array of photos
+ - failure: Error (Data task Error, JSON processing error )
+ 
+ */
+
 enum PhotoResult{
-    case success([Photo])
+    case success([Photo]) // Photos, page, pages, perpage, total
     case failure(Error)
 }
+
+/**
+ 
+ Downloaded Photo from URL
+ 
+ - success: UIImage
+ - failure: Error
+ 
+ */
 
 enum ImageResult{
     case success(UIImage)
     case failure(Error)
 }
 
+
+
 class PhotoStore{
     
+    
+    let photos = [[Photo]]()
     
     var imageCache: NSCache<NSString, UIImage>!
     
     init(){
         self.imageCache = NSCache<NSString, UIImage>()
     }
-        
+    
+    
+    /**
+     Fetches photos by Connecting to api.flickr.com.
+     
+     - Parameters:
+        - completion: PhotosResult.
+     
+     - Returns:
+        Void
+     */
+    
     
     func fetchPhotos(completion: @escaping PhotoCompletion){
-        let url = FlickrAPI.panoramaPhotosURL.absoluteString
+        let url = FlickrAPI.panoromaPhotosURL().absoluteString
         
         NetworkHelper.getRequest(url: url, params: nil) { (result) in
             let result = self.processRequest(for: result)
@@ -53,8 +88,20 @@ class PhotoStore{
         }
     }
     
+    /**
+     Fetches photo from image cache or download from network based on url
+     
+     - Parameters:
+        - photo: Photo
+        - completion: ImageCompletion
+     
+     - Returns: ImageCompletion
+     */
+    
     func fetchImage(for photo:Photo,completion: @escaping ImageCompletion){
         
+        
+        // fetch from cache
         if let image = imageCache.object(forKey: photo.url.absoluteString as NSString){
             OperationQueue.main.addOperation {
                 completion(.success(image))
@@ -63,7 +110,7 @@ class PhotoStore{
             
             let photoURLString = photo.url.absoluteString
             
-            // download image
+            // download image from network
             
             NetworkHelper.getImage(url:photoURLString, completion: { (result) in
                  let result = self.processImageRequest(for: result)
@@ -82,6 +129,17 @@ class PhotoStore{
         
     }
     
+    /**
+     Fetches photos by Connecting to api.flickr.com.
+     
+     - Parameters:
+        - for: NetworkImageResult
+     
+     - Returns: ImageResult
+     
+     */
+    
+    
     private func processImageRequest(for result:NetworkImageResult) -> ImageResult{
         switch result{
         case .success(let image):
@@ -89,6 +147,13 @@ class PhotoStore{
         case .failure(let error):
             return .failure(error)
         }
+    }
+    
+    func targetWillDisplay(section:Int,row: Int){
+        if photos.count == section - 1 && photos[section].count == row - 1{
+            
+        }
+        
     }
     
     

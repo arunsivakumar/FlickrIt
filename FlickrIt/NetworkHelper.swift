@@ -27,6 +27,17 @@ enum NetworkImageResult{
 
 struct NetworkHelper{
     
+    /**
+     Performs a GET request with parameters and returns a NetworkResponse
+     
+     - Parameters:
+        - url: url of the request
+        - params: parameters(optional)
+        - completion: NetworkResponse
+     - Returns:
+        NetworkResponse
+     */
+    
     static func getRequest(url:String,params: [String:String]?, completion: @escaping NetworkResponse){
         
         Alamofire.request(url).validate(statusCode: 200..<300).responseJSON { (response) in
@@ -47,6 +58,16 @@ struct NetworkHelper{
             }
         }
     }
+    
+    /**
+     Performs a GET request with url and returns a NetworkImageResponse
+     
+     - Parameters:
+        - url: url of the request
+        - completion: NetworkResponse
+     - Returns:
+        NetworkResponse
+     */
     
     static func getImage(url:String, completion: @escaping NetworkImageResponse ){
         Alamofire.request(url).responseImage { response in

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photos View Controller-->
+        <!--FlickrIt-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PhotosViewController" customModule="FlickrIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                             <constraint firstItem="LPS-xQ-qne" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yDo-UP-50h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fZC-K1-HZe"/>
+                    <navigationItem key="navigationItem" title="FlickrIt" id="fZC-K1-HZe"/>
                     <connections>
                         <outlet property="collectionView" destination="LPS-xQ-qne" id="fe2-zx-zG0"/>
                     </connections>
@@ -112,7 +112,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bzI-Aw-fgx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WDX-bi-TGI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WDX-bi-TGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

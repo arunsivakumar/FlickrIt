@@ -12,7 +12,7 @@ class PhotosViewController: UIViewController {
     
     var photoStore:PhotoStore!
     let photoDataSource = PhotoDataSource()
-    
+    private var photoCompletion: PhotoCompletion = {_ in }
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -21,21 +21,27 @@ class PhotosViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = photoDataSource
         
+        setUpCompletion()
         loadData()
     }
     
     
     func loadData(){
-        photoStore.fetchPhotos { (photoResult) in
-            switch photoResult{
-                case let .success(photos):
-                    self.photoDataSource.photos = photos
-                case .failure(_):
-                    self.photoDataSource.photos.removeAll()
-            }
-            self.collectionView.reloadData()
-        }
+        photoStore.fetchPhotos(completion: photoCompletion)
         
+    }
+    
+    func setUpCompletion(){
+        
+        photoCompletion = { [weak self] (result) in
+            switch result{
+            case let .success(photos):
+                self?.photoDataSource.photos = photos
+            case .failure(_):
+                self?.photoDataSource.photos.removeAll()
+            }
+            self?.collectionView.reloadData()
+        }
     }
 }
 
@@ -51,6 +57,8 @@ extension PhotosViewController:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
+        
+        
         
     }
     

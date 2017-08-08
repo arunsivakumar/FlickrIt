@@ -38,6 +38,8 @@ enum FlickrMethod:String{
 /// A FlickrAPI constructor
 struct FlickrAPI{
     
+    // API
+    
     private static let baseURLString =  "https://api.flickr.com/services/rest"
     private static let apiKey = "fd3c0d32acfaca425895462a4194ee13"
     
@@ -55,16 +57,36 @@ struct FlickrAPI{
     private static let ValueNoJSONCallBack = "1"
     
     private static let keyAPI              = "api_key"
+    
+ 
+    // JSON conversion
+    
+    private static let valuePhotos         = "photos"
+    private static let valuePhoto          = "photo"
+    private static let valueId             = "id"
+    private static let valueTitle          = "title"
+    private static let valueDateTaken      = "datetaken"
+    private static let valueUrl            = "url_h"
 
     
-    private static func constructURL(flickrMethod:FlickrMethod, parameters:[String:String]?) -> URL{
+    /**
+     Constructs Flickr URL.
+     
+     - Parameters:
+        - method:Flickr API Endpoint.
+        - parameters: Query items.
+     - Returns: URL constructed from method,base parameters and additional parameters.
+     */
+    
+    
+    private static func constructURL(method:FlickrMethod, parameters:[String:String]?) -> URL{
         
         var components = URLComponents(string:baseURLString)!
         
         var queryItems = [URLQueryItem]()
         
         let baseParameters = [
-            keyMethod: flickrMethod.rawValue,
+            keyMethod: method.rawValue,
             keyFormat: valueFormat,
             keyNoJSONCallBack: ValueNoJSONCallBack,
             keyAPI: apiKey
@@ -87,25 +109,40 @@ struct FlickrAPI{
         return components.url!
     }
     
-    static var panoramaPhotosURL: URL{
-        return constructURL(flickrMethod: .panaromicPhotos, parameters: [keyExtras:valueUrl,keyTags:valuePanaroma])
+    /**
+     Method to fetch URL
+     
+     - Parameters:
+        - page: default page
+     - Returns: paanaromaURL
+     */
+    
+    
+    static func panoromaPhotosURL(page:Int = 1) -> URL{
+        return constructURL(method: .panaromicPhotos, parameters: [keyExtras:valueUrl,keyTags:valuePanaroma,"page":"\(page)"])
     }
     
     
-    private static let valuePhotos         = "photos"
-    private static let valuePhoto          = "photo"
-    private static let valueId             = "id"
-    private static let valueTitle          = "title"
-    private static let valueDateTaken      = "datetaken"
-    private static let valueUrl            = "url_h"
 
+
+    
+    /**
+     Method to convert json to photos
+     
+     - Parameters:
+        - from: JSON
+     - Returns: PhotoResult
+     */
+    
     static func photos(from json: JSON) -> PhotoResult{
         
         var photoItems = [Photo]()
         
         guard
             let photos = json[valuePhotos].dictionary,
-            let photoArray = photos[valuePhoto]?.array else{
+            let photoArray = photos[valuePhoto]?.array
+        
+        else{
                 
             return .failure(FlickrError.processingJSON)
         }
@@ -122,6 +159,15 @@ struct FlickrAPI{
         
         return .success(photoItems)
     }
+    
+    /**
+     Method to convert json to photos
+     
+     - Parameters:
+        - from:JSON
+     - Returns: Photo
+     */
+    
     
     private static func photo(from json:JSON) -> Photo?{
         guard

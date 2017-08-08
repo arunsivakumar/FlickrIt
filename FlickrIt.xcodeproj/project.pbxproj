@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0E34F95CEB5046FE63EA04F0 /* Pods_FlickrItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F65002F7765E6CBC7E40CDF /* Pods_FlickrItUITests.framework */; };
 		404CA4A11F3920200006A2EC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404CA4A01F3920200006A2EC /* AlamofireImage.framework */; };
+		404CA4A31F3951A90006A2EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CA4A21F3951A90006A2EC /* Constants.swift */; };
+		404CA4A51F3951D30006A2EC /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CA4A41F3951D30006A2EC /* NavigationController.swift */; };
 		405D35C21F33CEC800DC72CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35C11F33CEC800DC72CF /* AppDelegate.swift */; };
 		405D35C41F33CEC800DC72CF /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35C31F33CEC800DC72CF /* PhotosViewController.swift */; };
 		405D35C71F33CEC800DC72CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D35C51F33CEC800DC72CF /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		38069DE85D8641CD97364DF5 /* Pods-FlickrItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrItTests/Pods-FlickrItTests.release.xcconfig"; sourceTree = "<group>"; };
 		404CA49C1F3916FE0006A2EC /* FlickrIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlickrIt-Bridging-Header.h"; sourceTree = "<group>"; };
 		404CA4A01F3920200006A2EC /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FlickrIt-hiojljezgvmtrfgzkrfkpekfckle/Build/Products/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
+		404CA4A21F3951A90006A2EC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		404CA4A41F3951D30006A2EC /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		405D35BE1F33CEC800DC72CF /* FlickrIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D35C11F33CEC800DC72CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		405D35C31F33CEC800DC72CF /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				405D35FD1F340EB600DC72CF /* PhotoCollectionViewCell.swift */,
 				405D36011F34148300DC72CF /* PhotoDetailViewController.swift */,
 				404CA49C1F3916FE0006A2EC /* FlickrIt-Bridging-Header.h */,
+				404CA4A21F3951A90006A2EC /* Constants.swift */,
+				404CA4A41F3951D30006A2EC /* NavigationController.swift */,
 			);
 			path = FlickrIt;
 			sourceTree = "<group>";
@@ -497,11 +503,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404CA4A51F3951D30006A2EC /* NavigationController.swift in Sources */,
 				405D35FC1F33EEA800DC72CF /* NetworkHelper.swift in Sources */,
 				405D35FE1F340EB600DC72CF /* PhotoCollectionViewCell.swift in Sources */,
 				405D35F21F33D1D300DC72CF /* Photo.swift in Sources */,
 				405D35C41F33CEC800DC72CF /* PhotosViewController.swift in Sources */,
 				405D35F01F33D14B00DC72CF /* PhotoStore.swift in Sources */,
+				404CA4A31F3951A90006A2EC /* Constants.swift in Sources */,
 				405D35FA1F33DA3D00DC72CF /* FlickrAPI.swift in Sources */,
 				405D36021F34148300DC72CF /* PhotoDetailViewController.swift in Sources */,
 				405D35F41F33D7BF00DC72CF /* PhotoDataSource.swift in Sources */,
