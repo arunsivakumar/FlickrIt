@@ -26,14 +26,14 @@ class PhotosViewController: UIViewController {
     
     
     func loadData(){
-        photoStore.fetchInterestingPhotos { (photoResult) in
+        photoStore.fetchPhotos { (photoResult) in
             switch photoResult{
                 case let .success(photos):
                     self.photoDataSource.photos = photos
                 case .failure(_):
                     self.photoDataSource.photos.removeAll()
             }
-            self.collectionView.reloadSections(IndexSet(integer:0))
+            self.collectionView.reloadData()
         }
         
     }
@@ -42,9 +42,9 @@ class PhotosViewController: UIViewController {
 extension PhotosViewController:UICollectionViewDelegate{
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cells = 3
+        let cells = 1
         let width = (self.view.frame.width / CGFloat(cells))
-        let height = width
+        let height = width / 3
         return CGSize(width: width, height: height)
     }
     
@@ -72,6 +72,7 @@ extension PhotosViewController{
                 let vc =
                     segue.destination as! PhotoDetailViewController
                 vc.photo = photo
+                vc.photoStore = photoStore
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
