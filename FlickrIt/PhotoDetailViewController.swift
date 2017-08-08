@@ -8,17 +8,70 @@
 
 import UIKit
 
+enum PhotoError: Error{
+    case imageCreationError
+}
+
 class PhotoDetailViewController:UIViewController{
     
-    @IBOutlet weak var photoImageView: UIImageView!
+    var imageCompletion:ImageCompletion = {_ in}
     
+    @IBOutlet weak var photoImageView: GVRPanoramaView!
+
     var photo:Photo!
+    var photoStore:PhotoStore!
     
      override func viewDidLoad() {
+        setUpVR()
+        setUpCompletion()
         loadData()
      }
     
+    func setUpVR(){
+        photoImageView.delegate = self
+        photoImageView.isHidden = true
+        
+        photoImageView.enableCardboardButton = true
+        photoImageView.enableFullscreenButton = true
+
+        
+    }
+    
+    func setUpCompletion(){
+        imageCompletion = { [weak self] result in
+            guard let _ = self else{ return }
+            
+            switch result{
+                case .success(let image):
+                    self?.photoImageView.load(image)
+                case .failure(_):
+                        break
+            }
+        }
+    }
+    
     func loadData(){
-        self.photoImageView.kf.setImage(with: photo.url)
+        photoStore.fetchImage(for: photo, completion: imageCompletion)
+    }
+}
+
+
+extension PhotoDetailViewController: GVRWidgetViewDelegate {
+    func widgetView(_ widgetView: GVRWidgetView!, didLoadContent content: Any!) {
+        
+        if content is UIImage {
+            photoImageView.isHidden = false
+            
+        }
+    }
+    
+    func widgetView(_ widgetView: GVRWidgetView!, didFailToLoadContent content: Any!,
+                    withErrorMessage errorMessage: String!)  {
+    }
+    
+    func widgetView(_ widgetView: GVRWidgetView!, didChange displayMode: GVRWidgetDisplayMode) {
+    }
+    
+    func widgetViewDidTap(_ widgetView: GVRWidgetView!) {
     }
 }

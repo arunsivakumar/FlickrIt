@@ -10,6 +10,8 @@ target 'FlickrIt' do
   pod 'SwiftyJSON'
   pod 'Bond'
   pod 'Kingfisher', '~> 3.0'
+  pod 'GVRSDK'
+  pod 'AlamofireImage', '~> 3.1'
 
   target 'FlickrItTests' do
     inherit! :search_paths
