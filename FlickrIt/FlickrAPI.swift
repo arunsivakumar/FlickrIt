@@ -32,6 +32,7 @@ enum FlickrError: Error{
 
 enum FlickrMethod:String{
     case interestingPhotos = "flickr.interestingness.getList"
+    case panaromicPhotos = "flickr.photos.search"
 }
 
 /// A FlickrAPI constructor
@@ -39,12 +40,30 @@ struct FlickrAPI{
     
     private static let baseURLString =  "https://api.flickr.com/services/rest"
     private static let apiKey = "fd3c0d32acfaca425895462a4194ee13"
+    
+    
+    private static let valuePhotos         = "photos"
+    private static let valuePhoto          = "photo"
+    private static let valueId             = "id"
+    private static let valueTitle          = "title"
+    private static let valueDateTaken      = "datetaken"
+    private static let valueUrl            = "url_h"
+    
+    private static let valuePanaroma       = "panaroma"
+    
+    private static let keyExtras           = "extras"
+    private static let keyTags             = "tags"
+    
+    private static let keyMethod           = "method"
+    
+    private static let keyFormat           = "format"
+    private static let valueFormat         = "json"
+    
+    private static let keyNoJSONCallBack   = "nojsoncallback"
+    private static let ValueNoJSONCallBack = "1"
+    
+    private static let keyAPI              = "api_key"
 
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-ss HH:mm:ss"
-        return formatter
-    }()
     
     private static func constructURL(flickrMethod:FlickrMethod, parameters:[String:String]?) -> URL{
         
@@ -53,10 +72,10 @@ struct FlickrAPI{
         var queryItems = [URLQueryItem]()
         
         let baseParameters = [
-            "method": flickrMethod.rawValue,
-            "format": "json",
-            "nojsoncallback": "1",
-            "api_key": apiKey
+            keyMethod: flickrMethod.rawValue,
+            keyFormat: valueFormat,
+            keyNoJSONCallBack: ValueNoJSONCallBack,
+            keyAPI: apiKey
         ]
         
         for (key, value) in baseParameters {
@@ -70,23 +89,23 @@ struct FlickrAPI{
                 queryItems.append(item)
             }
         }
-        
+
         components.queryItems = queryItems
         
         return components.url!
     }
     
-    static var interestingPhotosURL: URL{
-       return constructURL(flickrMethod: .interestingPhotos, parameters: ["extras":"url_h,date_taken"])
+    static var panoramaPhotosURL: URL{
+        return constructURL(flickrMethod: .panaromicPhotos, parameters: [keyExtras:valueUrl,keyTags:valuePanaroma])
     }
-    
+
     static func photos(from json: JSON) -> PhotoResult{
         
         var photoItems = [Photo]()
         
         guard
-            let photos = json["photos"].dictionary,
-            let photoArray = photos["photo"]?.array else{
+            let photos = json[valuePhotos].dictionary,
+            let photoArray = photos[valuePhoto]?.array else{
                 
             return .failure(FlickrError.processingJSON)
         }
@@ -106,17 +125,15 @@ struct FlickrAPI{
     
     private static func photo(from json:JSON) -> Photo?{
         guard
-            let id = json["id"].string,
-            let title = json["title"].string,
-            let dateString = json["datetaken"].string,
-            let urlString = json["url_h"].string,
-            let url = URL(string:urlString),
-            let dateTaken = dateFormatter.date(from: dateString) else{
+            let id = json[valueId].string,
+            let title = json[valueTitle].string,
+            let urlString = json[valueUrl].string,
+            let url = URL(string:urlString) else{
                 
                 // Information is not enough to construct a photo
                 return nil
         }
-        return Photo(id: id, title: title, url: url, dateTaken: dateTaken)
+        return Photo(id: id, title: title, url: url)
     }
 
 }
