@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E34F95CEB5046FE63EA04F0 /* Pods_FlickrItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F65002F7765E6CBC7E40CDF /* Pods_FlickrItUITests.framework */; };
+		404CA4A11F3920200006A2EC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404CA4A01F3920200006A2EC /* AlamofireImage.framework */; };
 		405D35C21F33CEC800DC72CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35C11F33CEC800DC72CF /* AppDelegate.swift */; };
 		405D35C41F33CEC800DC72CF /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405D35C31F33CEC800DC72CF /* PhotosViewController.swift */; };
 		405D35C71F33CEC800DC72CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405D35C51F33CEC800DC72CF /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 		2F399641A305A4C3B1188B91 /* Pods-FlickrItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrItUITests/Pods-FlickrItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35BEFDFA024B4941E47151BC /* Pods-FlickrItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrItTests/Pods-FlickrItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38069DE85D8641CD97364DF5 /* Pods-FlickrItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrItTests/Pods-FlickrItTests.release.xcconfig"; sourceTree = "<group>"; };
+		404CA49C1F3916FE0006A2EC /* FlickrIt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlickrIt-Bridging-Header.h"; sourceTree = "<group>"; };
+		404CA4A01F3920200006A2EC /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FlickrIt-hiojljezgvmtrfgzkrfkpekfckle/Build/Products/Debug-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		405D35BE1F33CEC800DC72CF /* FlickrIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D35C11F33CEC800DC72CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		405D35C31F33CEC800DC72CF /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404CA4A11F3920200006A2EC /* AlamofireImage.framework in Frameworks */,
 				405D36001F34132E00DC72CF /* Kingfisher.framework in Frameworks */,
 				405D35F81F33D9ED00DC72CF /* SwiftyJSON.framework in Frameworks */,
 				405D35F61F33D9E900DC72CF /* Alamofire.framework in Frameworks */,
@@ -125,6 +129,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		404CA49F1F3917360006A2EC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				405D35C11F33CEC800DC72CF /* AppDelegate.swift */,
+				405D35C51F33CEC800DC72CF /* Main.storyboard */,
+				405D35C81F33CEC800DC72CF /* Assets.xcassets */,
+				405D35CA1F33CEC800DC72CF /* LaunchScreen.storyboard */,
+				405D35CD1F33CEC800DC72CF /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		405D35B51F33CEC800DC72CF = {
 			isa = PBXGroup;
 			children = (
@@ -150,12 +166,8 @@
 		405D35C01F33CEC800DC72CF /* FlickrIt */ = {
 			isa = PBXGroup;
 			children = (
-				405D35C11F33CEC800DC72CF /* AppDelegate.swift */,
+				404CA49F1F3917360006A2EC /* SupportingFiles */,
 				405D35C31F33CEC800DC72CF /* PhotosViewController.swift */,
-				405D35C51F33CEC800DC72CF /* Main.storyboard */,
-				405D35C81F33CEC800DC72CF /* Assets.xcassets */,
-				405D35CA1F33CEC800DC72CF /* LaunchScreen.storyboard */,
-				405D35CD1F33CEC800DC72CF /* Info.plist */,
 				405D35EF1F33D14B00DC72CF /* PhotoStore.swift */,
 				405D35F11F33D1D300DC72CF /* Photo.swift */,
 				405D35F31F33D7BF00DC72CF /* PhotoDataSource.swift */,
@@ -163,6 +175,7 @@
 				405D35FB1F33EEA800DC72CF /* NetworkHelper.swift */,
 				405D35FD1F340EB600DC72CF /* PhotoCollectionViewCell.swift */,
 				405D36011F34148300DC72CF /* PhotoDetailViewController.swift */,
+				404CA49C1F3916FE0006A2EC /* FlickrIt-Bridging-Header.h */,
 			);
 			path = FlickrIt;
 			sourceTree = "<group>";
@@ -188,6 +201,7 @@
 		53C01FA4852DC650C7CFFE8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				404CA4A01F3920200006A2EC /* AlamofireImage.framework */,
 				405D35FF1F34132E00DC72CF /* Kingfisher.framework */,
 				405D35F71F33D9ED00DC72CF /* SwiftyJSON.framework */,
 				405D35F51F33D9E900DC72CF /* Alamofire.framework */,
@@ -276,6 +290,7 @@
 					405D35BD1F33CEC800DC72CF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = Q5S947L7K7;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					405D35D11F33CEC800DC72CF = {
@@ -643,11 +658,14 @@
 			baseConfigurationReference = 4E549E52A2463F7BCB48B7DA /* Pods-FlickrIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Q5S947L7K7;
 				INFOPLIST_FILE = FlickrIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arunsivakumar.FlickrIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlickrIt/FlickrIt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -657,11 +675,13 @@
 			baseConfigurationReference = B78DF5F3509798DB9B6DA57D /* Pods-FlickrIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = Q5S947L7K7;
 				INFOPLIST_FILE = FlickrIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arunsivakumar.FlickrIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlickrIt/FlickrIt-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
