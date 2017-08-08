@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Bond
 
 
 class Photo{
@@ -14,15 +15,12 @@ class Photo{
     var id: String
     var url: URL
     var title: String
-    var dateTaken: Date
-
     
-    init(id: String, title: String, url: URL, dateTaken: Date){
+    init(id: String, title: String, url: URL){
         
         self.id = id
         self.url = url
         self.title = title
-        self.dateTaken = dateTaken
     }
     
 }
