@@ -41,14 +41,6 @@ struct FlickrAPI{
     private static let baseURLString =  "https://api.flickr.com/services/rest"
     private static let apiKey = "fd3c0d32acfaca425895462a4194ee13"
     
-    
-    private static let valuePhotos         = "photos"
-    private static let valuePhoto          = "photo"
-    private static let valueId             = "id"
-    private static let valueTitle          = "title"
-    private static let valueDateTaken      = "datetaken"
-    private static let valueUrl            = "url_h"
-    
     private static let valuePanaroma       = "panaroma"
     
     private static let keyExtras           = "extras"
@@ -98,6 +90,14 @@ struct FlickrAPI{
     static var panoramaPhotosURL: URL{
         return constructURL(flickrMethod: .panaromicPhotos, parameters: [keyExtras:valueUrl,keyTags:valuePanaroma])
     }
+    
+    
+    private static let valuePhotos         = "photos"
+    private static let valuePhoto          = "photo"
+    private static let valueId             = "id"
+    private static let valueTitle          = "title"
+    private static let valueDateTaken      = "datetaken"
+    private static let valueUrl            = "url_h"
 
     static func photos(from json: JSON) -> PhotoResult{
         
