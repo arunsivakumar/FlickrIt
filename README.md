@@ -26,9 +26,9 @@ iOS app that fetches panoramic photos from Flickr for users to view using google
 
 ## Screenshots
 
-![Screen1](https://github.com/arunsivakumar/FlickrIt/blob/master/screens/screen1) 
+![Screen1](https://github.com/arunsivakumar/FlickrIt/blob/master/screens/screen1.png) 
 
-![Screen2](https://github.com/arunsivakumar/FlickrIt/blob/master/screens/screen2) 
+![Screen2](https://github.com/arunsivakumar/FlickrIt/blob/master/screens/screen2.png) 
 
 [1]: http://www.cocoapods.org
 
