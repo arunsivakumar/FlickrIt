@@ -11,8 +11,9 @@ $ pod install
 $ open FlickrIt.xcworkspace
 ```
 ## Requirements
-* Xcode 8 and above
-* Swift 3.0 and above
+* iOS 10.3+
+* Xcode 8+
+* Swift 3+
 
 ## Description
 
