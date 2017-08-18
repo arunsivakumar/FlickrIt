@@ -9,11 +9,11 @@ $ pod install
 ```
 ```
 $ open FlickrIt.xcworkspace
-
+```
 ## Requirements
 * Xcode 8 and above
 * Swift 3.0 and above
-```
+
 ## Description
 
 iOS app that fetches panoramic photos from Flickr for users to view using google cardboard in a 360° panoramic view.
