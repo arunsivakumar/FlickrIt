@@ -11,7 +11,11 @@ import Kingfisher
 
 class PhotoCollectionViewCell: UICollectionViewCell{
     
+      //MARK:- Outlets
+    
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    //MARK:- Variables
     var photo:Photo?{
         didSet{
             if let photo = photo{
@@ -22,7 +26,7 @@ class PhotoCollectionViewCell: UICollectionViewCell{
         }
     }
     
-    
+    //MARK:- View Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }

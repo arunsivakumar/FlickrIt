@@ -10,12 +10,21 @@ import UIKit
 
 class PhotosViewController: UIViewController {
     
+     //MARK:- Public API
     var photoStore:PhotoStore!
+    
+     //MARK:- Variables
+    
     let photoDataSource = PhotoDataSource()
     private var photoCompletion: PhotoCompletion = {_ in }
     
+    //MARK:- Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
 
+    
+     //MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -25,6 +34,7 @@ class PhotosViewController: UIViewController {
         loadData()
     }
     
+     //MARK:- Functions
     
     func loadData(){
         photoStore.fetchPhotos(completion: photoCompletion)
@@ -44,6 +54,8 @@ class PhotosViewController: UIViewController {
         }
     }
 }
+
+//MARK:- CollectionView Delegate
 
 extension PhotosViewController:UICollectionViewDelegate{
     
@@ -66,6 +78,8 @@ extension PhotosViewController:UICollectionViewDelegate{
 //        let photo = photoDataSource.photos[indexPath.row]
 //    }
 }
+
+//MARK:- Navigation
 
 extension PhotosViewController{
     

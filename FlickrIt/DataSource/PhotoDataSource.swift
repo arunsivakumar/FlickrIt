@@ -11,7 +11,11 @@ import UIKit
 
 class PhotoDataSource:NSObject,UICollectionViewDataSource{
     
+    
+    //MARK:- Variables
     var photos = [Photo]()
+    
+    //MARK:- DataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count

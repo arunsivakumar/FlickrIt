@@ -14,18 +14,31 @@ enum PhotoError: Error{
 
 class PhotoDetailViewController:UIViewController{
     
+    
+    //MARK:- Completion
+    
     var imageCompletion:ImageCompletion = {_ in}
     
+    
+    //MARK:- Outlets
+    
     @IBOutlet weak var photoImageView: GVRPanoramaView!
-
+    
+    //MARK:- Public API
+    
     var photo:Photo!
     var photoStore:PhotoStore!
+    
+    
+    //MARK:- Lifecycle
     
      override func viewDidLoad() {
         setUpVR()
         setUpCompletion()
         loadData()
      }
+    
+    //MARK:- Functions
     
     func setUpVR(){
         photoImageView.delegate = self
@@ -55,6 +68,7 @@ class PhotoDetailViewController:UIViewController{
     }
 }
 
+//MARK:- GVRWidgetViewDelegate
 
 extension PhotoDetailViewController: GVRWidgetViewDelegate {
     func widgetView(_ widgetView: GVRWidgetView!, didLoadContent content: Any!) {

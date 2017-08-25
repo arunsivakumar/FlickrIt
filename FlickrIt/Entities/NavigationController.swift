@@ -13,6 +13,8 @@ import UIKit
 
 class NavigationController: UINavigationController {
     
+    //MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -23,6 +25,8 @@ class NavigationController: UINavigationController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:- Functions
     
     func configureUI(){
         
